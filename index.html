@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Cities in Oregon</title>
+    <title>Matchday Experiance Map Project: The Cascadia Cup</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -56,12 +56,11 @@
             <section data-scene="overview" data-background="assets/portland.mp4">
                 <div class="fullscreen text-center">
 
-                    <h1 class="display-4 d-flex justify-content-center">Cities in Oregon</h1>
+                    <h1 class="display-4 d-flex justify-content-center">Matchday Experience Map Project: The Cascadia Cup</h1>
 
 
                     <small class="d-flex justify-content-center" style="color: rgba(255,255,255,0.95)">This story map
-                        illustrates the major cities in
-                        Oregon using a storytelling structure.
+                        illustrates the matchday experiences of each home pitch in the Cascadia Cup.
                     </small>
                 </div>
             </section>
@@ -261,6 +260,7 @@
     // }
 
     var layers = {
+        sounders: {layer: L.tileLayer('assets/tiles/sounders/{z}/{x}/{y}.png')},
         ESRI: {layer: L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}')},
         counties: {
             layer: L.geoJson.ajax('assets/counties.geojson', {
@@ -283,7 +283,7 @@
 
     var scenes = {
         overview: {lat: 44.0000000, lng: -123.5000000, zoom: 7, name: 'Cover Page', layers: []},
-        portland: {lat: 45.5186089, lng: -122.7270297, zoom: 11, name: 'Portland', layers: []},
+        portland: {lat: 47.595075, lng: -122.331647, zoom: 19, name: 'Portland', layers: [layers.sounders]},
         corvallis: {lat: 44.5701158, lng: -123.2949388, zoom: 14, name: 'Corvallis', layers: [layers.ESRI]},
         eugene: {lat: 44.0549563, lng: -123.0958048, zoom: 13, name: 'Eugene', layers: []},
         salem: {lat: 44.9419055, lng: -123.0356407, zoom: 13, name: 'Salem', layers: []},
